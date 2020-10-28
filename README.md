@@ -1,15 +1,12 @@
 ## bradoo test
-
-<div align="center">
   
-![Node](https://img.shields.io/badge/Node-v14.8.0-success?style=for-the-badge)
-![npm](https://img.shields.io/badge/npm-v6.14.7-success?style=for-the-badge)
-![Express](https://img.shields.io/badge/Express-v4.17.1-success?style=for-the-badge)
-![Typescript](https://img.shields.io/badge/Typescript-v4.0.3-success?style=for-the-badge)
-![Sequelize](https://img.shields.io/badge/Sequelize-v6.3.5-success?style=for-the-badge)
-![React](https://img.shields.io/badge/React-v17.0.1-success?style=for-the-badge)
-
-</div>
+![Design Pattern](https://img.shields.io/badge/Design_Pattern-SOLID-success?style=flat)
+![Node](https://img.shields.io/badge/Node-v14.8.0-success?style=flat)
+![npm](https://img.shields.io/badge/npm-v6.14.7-success?style=flat)
+![Express](https://img.shields.io/badge/Express-v4.17.1-success?style=flat)
+![Typescript](https://img.shields.io/badge/Typescript-v4.0.3-success?style=flat)
+![Sequelize](https://img.shields.io/badge/Sequelize-v6.3.5-success?style=flat)
+![React](https://img.shields.io/badge/React-v17.0.1-success?style=flat)
 
 --------
 
