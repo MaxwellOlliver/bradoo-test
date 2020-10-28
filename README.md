@@ -10,7 +10,6 @@
 ![React](https://img.shields.io/badge/React-v17.0.1-success?style=for-the-badge)
 
 </div>
-<br></br>
 
 --------
 
