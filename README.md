@@ -1,6 +1,6 @@
 ## bradoo test
   
-![Design Pattern](https://img.shields.io/badge/Design_Pattern-SOLID-success?style=flat)
+![Design Pattern](https://img.shields.io/badge/Backend_Design_Pattern-SOLID-success?style=flat)
 ![Node](https://img.shields.io/badge/Node-v14.8.0-success?style=flat)
 ![npm](https://img.shields.io/badge/npm-v6.14.7-success?style=flat)
 ![Express](https://img.shields.io/badge/Express-v4.17.1-success?style=flat)
