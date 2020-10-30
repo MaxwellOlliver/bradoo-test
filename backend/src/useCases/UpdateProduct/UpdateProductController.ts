@@ -30,7 +30,8 @@ export class UpdateProductController {
 
       return response.status(204).send();
     } catch (error) {
-      return response.status(400).json({ error: error.message || 'Unexpected error.' })
+      return response.status(error.message === 'Product does not exists' ? 404 : 400)
+      .json({ error: error.message || 'Unexpected error.' });
     }
   }
 }

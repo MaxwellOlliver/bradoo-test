@@ -31,9 +31,10 @@ export class CreateVendorController {
     try {
       const vendor = await this.createVendorUseCase.execute({ name, cnpj, city, products });
 
-      return response.json(vendor);     
+      return response.status(201).json(vendor);     
     } catch (error) {
-      return response.status(400).json({ error: error.message || 'Unexpected error.' })
+      return response.status(error.message === 'Vendor does not exists' ? 404 : 400)
+      .json({ error: error.message || 'Unexpected error.' });
     }
   }
 }

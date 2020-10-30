@@ -19,7 +19,7 @@ export class CreateProductUseCase {
     const productAlreadyExists = await this.productRepository.findByCode(data.code, data.vendor_id);
 
     if (productAlreadyExists) {
-      throw new Error('Product already exists');
+      throw new Error(`This Vendor already have a Product with code ${data.code}.`);
     }
 
     const product = new Product(data);

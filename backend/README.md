@@ -26,7 +26,7 @@ Each endpoint manipulates or displays information related to Vendors:
 
 Endpoints to view and manipulate the products of the selected vendor.
 
-* [Create a Product](accounts/get.md) : `POST /vendors/product`
-* [List Vendor's product](accounts/post.md) : `GET /vendors/product?v=vendorPk`
-* [Edit a Product](accounts/pk/get.md) : `PUT /vendors/product/:pk`
-* [Delete a Product](accounts/pk/put.md) : `DELETE /vendors/product/:pk`
+* [Create a Product](docs/products/get.md) : `POST /vendors/product`
+* [List Vendor's product](docs/products/post.md) : `GET /vendors/product?v=vendorPk`
+* [Edit a Product](docs/products/pk/put.md) : `PUT /vendors/product/:pk`
+* [Delete a Product](docs/products/pk/delete.md) : `DELETE /vendors/product/:pk`

@@ -12,9 +12,9 @@ No one of these values are required.
 
 ```json
 {
-    "q": "VALUE TO SEARCH BY",
-    "field": "FIELD TO SEARCH BY",
-    "page": "PAGE NUMBER - 20 values to page"
+    "q": "STRING - VALUE TO SEARCH BY",
+    "field": "STRING - FIELD TO SEARCH BY [name, cnpj, city, all]",
+    "page": "INTEGER - PAGE NUMBER - 20 values to page"
 }
 ```
 

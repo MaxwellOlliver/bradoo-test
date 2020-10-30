@@ -18,7 +18,7 @@ export class UpdateProductUseCase {
       const codeAvailable = await this.productRepository.findByCode(data.code, data.vendor_id);
 
       if (codeAvailable) {
-        throw new Error(`Product with code ${data.code} already exists.`);
+        throw new Error(`This Vendor already have a Product with code ${data.code}.`);
       }
     }
 

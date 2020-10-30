@@ -25,7 +25,12 @@ database.
 
 **Code** : `404 NOT FOUND`
 
-**Content** : `{}`
+**Content**
+
+```json
+{
+    "error": "Vendor does not exists"
+}
 
 ## Notes
 

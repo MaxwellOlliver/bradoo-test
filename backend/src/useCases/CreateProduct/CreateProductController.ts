@@ -26,9 +26,10 @@ export class CreateProductController {
     try {
       const product = await this.createProductUseCase.execute({ name, vendor_id, price, code });
 
-      return response.json(product);
+      return response.status(201).json(product);
     } catch (error) {
-      return response.status(400).json({ error: error.message || 'Unexpected error.' })
+      return response.status(error.message === 'Product does not exists' ? 404 : 400)
+      .json({ error: error.message || 'Unexpected error.' });
     }
   }
 }

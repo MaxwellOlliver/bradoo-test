@@ -31,9 +31,10 @@ export class UpdateVendorController {
     try {
       await this.updateVendorUseCase.execute({ id, name, cnpj, city });
 
-      return response.status(201).send();
+      return response.status(204).send();
     } catch (error) {
-      return response.status(400).json({ error: error.message || 'Unexpected error.' })
+      return response.status(error.message === 'Vendor does not exists' ? 404 : 400)
+        .json({ error: error.message || 'Unexpected error.' });
     }
   }
 }

@@ -74,11 +74,17 @@ Provide name, CNPJ, city and a products array of Vendor to be created.
 
 ## Error Responses
 
-**Condition** : If CNPJ is not available.
+**Condition** : Vendor already exists.
 
 **Code** : `400 BAD REQUEST`
 
-**Content** : `{}`
+**Content**
+
+```json
+{
+    "error": "Vendor already exists"
+}
+```
 
 ### Or
 
