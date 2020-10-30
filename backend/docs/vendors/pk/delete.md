@@ -1,23 +1,19 @@
 # Delete User's Account
 
-Delete the Account of the Authenticated User if they are Owner.
+Delete the Vendor corresponding to PK value sent on params.
 
-**URL** : `/api/accounts/:pk/`
+**URL** : `/vendors/:pk`
 
-**URL Parameters** : `pk=[integer]` where `pk` is the ID of the Account in the
+**URL Parameters** : `pk=[integer]` where `pk` is the ID of the Vendor in the
 database.
 
 **Method** : `DELETE`
-
-**Auth required** : YES
-
-**Permissions required** : User is Account Owner
 
 **Data** : `{}`
 
 ## Success Response
 
-**Condition** : If the Account exists.
+**Condition** : If the Product exists.
 
 **Code** : `204 NO CONTENT`
 
@@ -25,21 +21,12 @@ database.
 
 ## Error Responses
 
-**Condition** : If there was no Account available to delete.
+**Condition** : If the Product does not exists.
 
 **Code** : `404 NOT FOUND`
 
 **Content** : `{}`
 
-### Or
-
-**Condition** : Authorized User is not Owner of Account at URL.
-
-**Code** : `403 FORBIDDEN`
-
-**Content** : `{}`
-
-
 ## Notes
 
-* Will remove memberships for this Account for all Users that had access.
+* Will remove all products belonging to that vendor.
