@@ -1,23 +1,27 @@
-# Create User's Account
+# Create a Vendor
 
-Create an Account for the authenticated User if an Account for that User does
-not already exist. Each User can only have one Account.
+Create a Vendor record.
 
-**URL** : `/api/accounts/`
+**URL** : `/vendors`
 
 **Method** : `POST`
 
-**Auth required** : YES
-
-**Permissions required** : None
-
 **Data constraints**
 
-Provide name of Account to be created.
+Provide name, CNPJ, city and a products array of Vendor to be created.
 
-```json
+```js
 {
-    "name": "[unicode 64 chars max]"
+	"name": "STRING",
+	"cnpj": "STRING - ONLY VALID CNPJ",
+	"city": "STRING",
+	"products": [
+		{
+			"name": "STRING",
+			"code": "STRING",
+			"price": "FLOAT NUMBER"
+		}
+	]
 }
 ```
 
@@ -25,13 +29,22 @@ Provide name of Account to be created.
 
 ```json
 {
-    "name": "Build something project dot com"
+	"name": "José",
+	"cnpj": "93.475.335/0001-47",
+	"city": "São Paulo",
+	"products": [
+		{
+			"name": "Pen",
+			"code": "000",
+			"price": 2.50
+		}
+	]
 }
 ```
 
 ## Success Response
 
-**Condition** : If everything is OK and an Account didn't exist for this User.
+**Condition** : If everything is OK and the sent CNPJ is available.
 
 **Code** : `201 CREATED`
 
@@ -39,19 +52,31 @@ Provide name of Account to be created.
 
 ```json
 {
-    "id": 123,
-    "name": "Build something project dot com",
-    "url": "http://testserver/api/accounts/123/"
+  "id": 56,
+  "name": "José",
+  "cnpj": "93.475.335/0001-47",
+  "city": "São Paulo",
+  "updatedAt": "2020-10-28T16:51:47.543Z",
+  "createdAt": "2020-10-28T16:51:47.543Z",
+  "products": [
+    {
+      "id": 196,
+      "name": "Carvao",
+      "code": "qyu",
+      "price": 23,
+      "vendor_id": 56,
+      "updatedAt": "2020-10-28T16:51:47.568Z",
+      "createdAt": "2020-10-28T16:51:47.568Z"
+    },
+  ]
 }
 ```
 
 ## Error Responses
 
-**Condition** : If Account already exists for User.
+**Condition** : If CNPJ is not available.
 
-**Code** : `303 SEE OTHER`
-
-**Headers** : `Location: http://testserver/api/accounts/123/`
+**Code** : `400 BAD REQUEST`
 
 **Content** : `{}`
 
@@ -65,8 +90,6 @@ Provide name of Account to be created.
 
 ```json
 {
-    "name": [
-        "This field is required."
-    ]
+    "Error": "fieldName is a required field."
 }
 ```
