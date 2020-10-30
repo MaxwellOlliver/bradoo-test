@@ -1,4 +1,4 @@
-# Delete User's Account
+# Delete Vendor
 
 Delete the Vendor corresponding to PK value sent on params.
 
