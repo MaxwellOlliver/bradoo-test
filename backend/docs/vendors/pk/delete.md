@@ -13,7 +13,7 @@ database.
 
 ## Success Response
 
-**Condition** : If the Product exists.
+**Condition** : If the Vendor exists.
 
 **Code** : `204 NO CONTENT`
 
