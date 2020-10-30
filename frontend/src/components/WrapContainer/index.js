@@ -13,6 +13,7 @@ function WrapContainer() {
     showCreateModal,
     showEditModal,
     showEditProductModal,
+    showCreateProductModal,
     setContext,
     items,
   } = useContext(ModalContext);
@@ -60,6 +61,20 @@ function WrapContainer() {
         <VendorSection />
         <ProductSection />
         <div className="products-actions">
+          <button
+            onClick={() => {
+              if (items.vendors.length === 0) {
+                return toast.error('You must select a vendor.');
+              } else if (items.vendors.length > 1) {
+                return toast.error('Select only one vendor.');
+              }
+              setContext('products');
+              showCreateProductModal();
+            }}
+          >
+            <FiPlus size={20} color="#fff" />
+            <span>Create product</span>
+          </button>
           <button
             onClick={() => {
               if (items.products.length === 0) {

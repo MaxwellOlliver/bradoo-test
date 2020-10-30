@@ -2,8 +2,8 @@ export default {
   dialect: 'postgres',
   host: 'localhost',
   username: 'postgres',
-  password: 'sputnik',
-  database: 'bradoo',
+  password: '',
+  database: 'bradoo-test',
   define: {
     timestamps: true,
     underscored: true,

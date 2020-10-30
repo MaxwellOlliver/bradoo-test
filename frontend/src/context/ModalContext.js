@@ -35,6 +35,10 @@ export function ModalProvider({ children }) {
     setModal('editProduct');
   }
 
+  function showCreateProductModal() {
+    setModal('createProduct');
+  }
+
   return (
     <ModalContext.Provider
       value={{
@@ -44,6 +48,7 @@ export function ModalProvider({ children }) {
         showCreateModal,
         showEditModal,
         showEditProductModal,
+        showCreateProductModal,
         hideModal,
         setContext,
         context,

@@ -144,6 +144,12 @@ function Modal(props) {
                     toast.error('Invalid CNPJ');
                   }
                 }}
+                onFocus={() => {
+                  if (!validate(vendorCnpj)) {
+                    setCnpjIsValid(true);
+                    toast.dismiss();
+                  }
+                }}
                 maxLength={18}
               />
               <input
@@ -445,7 +451,7 @@ function Modal(props) {
           ]);
           hideModal();
         } catch (error) {
-          console.log(error);
+          toast.error('Error on edit product, please try again.');
         }
       } else {
         toast.error('Fill in all fields, please.');
@@ -500,6 +506,86 @@ function Modal(props) {
     );
   }
 
+  function CreateProductModal() {
+    const [productName, setProductName] = useState('');
+    const [productCode, setProductCode] = useState('');
+    const [productPrice, setProductPrice] = useState('');
+
+    async function handleCreate(e) {
+      e.preventDefault();
+      if (productName && productCode && productPrice) {
+        try {
+          const response = await api.post(`/vendors/product`, {
+            vendor_id: items.vendors[0].id,
+            name: productName,
+            code: productCode,
+            price: productPrice,
+          });
+
+          productsSetter.current((state) => [
+            ...state,
+            {
+              ...response.data,
+              formatted_price: response.data.price.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              }),
+            },
+          ]);
+          hideModal();
+        } catch (error) {
+          toast.error('Error on create product, please try again.');
+        }
+      } else {
+        toast.error('Fill in all fields, please.');
+      }
+    }
+
+    return (
+      <CreateContainer>
+        <form style={{ alignSelf: 'center' }}>
+          <h3>Product Info</h3>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Name"
+            onChange={(e) => setProductName(e.target.value)}
+          />
+          <input
+            type="text"
+            name="code"
+            id="code"
+            placeholder="Code"
+            onChange={(event) => setProductCode(event.target.value)}
+          />
+          <input
+            type="number"
+            name="price"
+            id="price"
+            placeholder="Price"
+            onChange={(e) => setProductPrice(e.target.value)}
+          />
+
+          <div className="row">
+            <button type="submit" onClick={handleCreate}>
+              Create
+            </button>
+            <button
+              id="back"
+              onClick={(e) => {
+                e.preventDefault();
+                hideModal();
+              }}
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </CreateContainer>
+    );
+  }
+
   return modal === 'delete' ? (
     <DeleteModal />
   ) : modal === 'create' ? (
@@ -508,6 +594,8 @@ function Modal(props) {
     <EditModal />
   ) : modal === 'editProduct' ? (
     <EditProductModal />
+  ) : modal === 'createProduct' ? (
+    <CreateProductModal />
   ) : null;
 }
 

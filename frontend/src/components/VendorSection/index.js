@@ -36,11 +36,16 @@ function VendorSection() {
     (async () => {
       try {
         const response = await api.get('/vendors');
-        setTimeout(() => setLoading(false), 2000);
 
         setNext(response.data.next);
         setVendors(response.data.vendors);
-      } catch (error) {}
+        setLoading(false);
+      } catch (error) {
+        setNext(false);
+        setVendors([]);
+        setLoading(false);
+        toast.error('Error on load vendors.');
+      }
     })();
   }, []);
 
