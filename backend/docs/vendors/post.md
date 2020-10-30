@@ -62,8 +62,8 @@ Provide name, CNPJ, city and a products array of Vendor to be created.
       {
         "id": 196,
         "name": "Carvao",
-        "code": "qyu",
-        "price": 23,
+        "code": "000",
+        "price": 2.50,
         "vendor_id": 56,
         "updatedAt": "2020-10-28T16:51:47.568Z",
         "createdAt": "2020-10-28T16:51:47.568Z"
