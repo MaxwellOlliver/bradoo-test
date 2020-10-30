@@ -15,7 +15,7 @@ None of the values are required.
     "queryParams": {
         "q": "VALUE TO SEARCH BY",
         "field": "FIELD TO SEARCH BY",
-        "page": "PAGE NUMBER - 20 values to page",
+        "page": "PAGE NUMBER - 20 values to page"
     }
 }
 ```
@@ -47,8 +47,8 @@ Searching a vendor with "foo" name.
             "city": "Rio de Janeiro",
             "createdAt": "2020-10-27T19:08:33.867Z",
             "updatedAt": "2020-10-27T19:08:33.867Z"
-        },
+        }
     ],
-    "next": false,
+    "next": false
 }
 ```
