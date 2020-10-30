@@ -8,7 +8,7 @@ Create a Vendor record.
 
 **Data constraints**
 
-Provide name, CNPJ, city and a products array of Vendor to be created.
+Provide name, CNPJ, city and a products array to be created.
 
 ```json
 {
@@ -44,7 +44,7 @@ Provide name, CNPJ, city and a products array of Vendor to be created.
 
 ## Success Response
 
-**Condition** : If everything is OK and the sent CNPJ is available.
+**Condition** : If everything is OK and the sent CNPJ is valid.
 
 **Code** : `201 CREATED`
 
@@ -74,7 +74,7 @@ Provide name, CNPJ, city and a products array of Vendor to be created.
 
 ## Error Responses
 
-**Condition** : Vendor already exists.
+**Condition** : If Vendor already exists.
 
 **Code** : `400 BAD REQUEST`
 
@@ -97,5 +97,19 @@ Provide name, CNPJ, city and a products array of Vendor to be created.
 ```json
 {
     "Error": "fieldName is a required field."
+}
+```
+
+### Or 
+
+**Condition** : If CNPJ is invalid.
+
+**Code** : `400 BAD REQUEST`
+
+**Content example**
+
+```json
+{
+    "Error": "Invalid CNPJ"
 }
 ```
