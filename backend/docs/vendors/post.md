@@ -10,18 +10,18 @@ Create a Vendor record.
 
 Provide name, CNPJ, city and a products array of Vendor to be created.
 
-```js
+```json
 {
+    "name": "STRING",
+    "cnpj": "STRING - ONLY VALID CNPJ",
+    "city": "STRING",
+    "products": [
+    {
 	"name": "STRING",
-	"cnpj": "STRING - ONLY VALID CNPJ",
-	"city": "STRING",
-	"products": [
-		{
-			"name": "STRING",
-			"code": "STRING",
-			"price": "FLOAT NUMBER"
-		}
-	]
+	"code": "STRING",
+	"price": "FLOAT NUMBER"
+    }
+]
 }
 ```
 
@@ -29,16 +29,16 @@ Provide name, CNPJ, city and a products array of Vendor to be created.
 
 ```json
 {
-	"name": "José",
-	"cnpj": "93.475.335/0001-47",
-	"city": "São Paulo",
-	"products": [
-		{
-			"name": "Pen",
-			"code": "000",
-			"price": 2.50
-		}
-	]
+    "name": "José",
+    "cnpj": "93.475.335/0001-47",
+    "city": "São Paulo",
+    "products": [
+    	{
+            "name": "Pen",
+	    "code": "000",
+	    "price": 2.50
+    	}
+    ]
 }
 ```
 
@@ -52,23 +52,23 @@ Provide name, CNPJ, city and a products array of Vendor to be created.
 
 ```json
 {
-  "id": 56,
-  "name": "José",
-  "cnpj": "93.475.335/0001-47",
-  "city": "São Paulo",
-  "updatedAt": "2020-10-28T16:51:47.543Z",
-  "createdAt": "2020-10-28T16:51:47.543Z",
-  "products": [
-    {
-      "id": 196,
-      "name": "Carvao",
-      "code": "qyu",
-      "price": 23,
-      "vendor_id": 56,
-      "updatedAt": "2020-10-28T16:51:47.568Z",
-      "createdAt": "2020-10-28T16:51:47.568Z"
-    },
-  ]
+    "id": 56,
+    "name": "José",
+    "cnpj": "93.475.335/0001-47",
+    "city": "São Paulo",
+    "updatedAt": "2020-10-28T16:51:47.543Z",
+    "createdAt": "2020-10-28T16:51:47.543Z",
+    "products": [
+      {
+        "id": 196,
+        "name": "Carvao",
+        "code": "qyu",
+        "price": 23,
+        "vendor_id": 56,
+        "updatedAt": "2020-10-28T16:51:47.568Z",
+        "createdAt": "2020-10-28T16:51:47.568Z"
+      },
+    ]
 }
 ```
 
