@@ -34,9 +34,12 @@ Searching a vendor with "foo" name.
 **Code** : `200 OK`
 
 **Content** :
+
+"next" value indicates if have a next page.
+
 ```json
 {
-    [
+    "vendors": [
         {
             "id": 19,
             "name": "foo",
@@ -45,6 +48,7 @@ Searching a vendor with "foo" name.
             "createdAt": "2020-10-27T19:08:33.867Z",
             "updatedAt": "2020-10-27T19:08:33.867Z"
         },
-    ]
+    ],
+    "next": false,
 }
 ```
