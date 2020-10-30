@@ -18,7 +18,7 @@ No one of these values are required.
 }
 ```
 
-**Data example**:
+**URL example**:
 
 Searching a vendor with "foo" name.
 
