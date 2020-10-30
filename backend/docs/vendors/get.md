@@ -6,17 +6,15 @@ List Vendors according to the parameters sent.
 
 **Method** : `GET`
 
-**Data constraints** : 
+**URL Query Params** : 
 
 No one of these values are required.
 
 ```json
 {
-    "queryParams": {
-        "q": "VALUE TO SEARCH BY",
-        "field": "FIELD TO SEARCH BY",
-        "page": "PAGE NUMBER - 20 values to page"
-    }
+    "q": "VALUE TO SEARCH BY",
+    "field": "FIELD TO SEARCH BY",
+    "page": "PAGE NUMBER - 20 values to page"
 }
 ```
 
