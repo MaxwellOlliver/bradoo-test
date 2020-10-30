@@ -21,7 +21,7 @@ database.
 
 ## Error Responses
 
-**Condition** : If the Product does not exists.
+**Condition** : If the Vendor does not exists.
 
 **Code** : `404 NOT FOUND`
 
