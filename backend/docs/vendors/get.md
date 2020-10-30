@@ -33,7 +33,9 @@ Searching a vendor with "foo" name.
 
 **Code** : `200 OK`
 
-**Content** : `{
+**Content** :
+```json
+{
     [
         {
             "id": 19,
@@ -44,4 +46,5 @@ Searching a vendor with "foo" name.
             "updatedAt": "2020-10-27T19:08:33.867Z"
         },
     ]
-}`
+}
+```
