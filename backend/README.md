@@ -19,8 +19,8 @@ Each endpoint manipulates or displays information related to Vendors:
 
 * [Create a Vendor](docs/vendors/post.md) : `POST /vendors`
 * [List Vendors](docs/vendors/get.md) : `GET /vendors`
-* [Update a Vendor](docs/vendors/put.md) : `PUT /vendors/:pk`
-* [Delete a Vendor](docs/vendors/delete.md) : `DELETE /vendors/:pk`
+* [Update a Vendor](docs/vendors/pk/put.md) : `PUT /vendors/:pk`
+* [Delete a Vendor](docs/vendors/pk/delete.md) : `DELETE /vendors/:pk`
 
 ### Account related
 
