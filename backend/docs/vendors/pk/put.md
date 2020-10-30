@@ -1,45 +1,45 @@
-# Update Account
+# Update Vendor
 
-Update the Account of the Authenticated User if and only if they are Owner.
+Updates Vendor corresponding the PK value sent on params.
 
-**URL** : `/api/accounts/:pk/`
+**URL** : `/vendors/:pk`
 
 **Method** : `PUT`
-
-**Auth required** : YES
-
-**Permissions required** : User is Account Owner
 
 **Data constraints**
 
 ```json
 {
-    "name": "[unicode 64 chars max]",
+    "name": "STRING",
+    "cnpj": "STRING - ONLY VALID CNPJ",
+    "city": "STRING"
 }
 ```
 
-**Data example** Partial data is allowed, but there is only one field.
+**Data example**
+
+all fields are required.
 
 ```json
 {
-    "name": "Build something project dot com",
+    "name": "foo2",
+    "cnpj": "20.599.009/0001-78",
+    "city": "Rio de Janeiro"
 }
 ```
 
 ## Success Responses
 
-**Condition** : Update can be performed either fully or partially by the Owner
-of the Account.
+**Condition** : Update can be performed either fully or partially.
 
 **Code** : `200 OK`
 
-**Content example** : For the example above, when the 'name' is updated and
-posted to `/api/accounts/123/`...
+**Content example** : For the example above, when the 'name' is updated.
 
 ```json
 {
     "id": 123,
-    "name": "New project name",
+    "name": "New VENDOR name",
     "enterprise": false,
     "url": "http://testserver/api/accounts/123/"
 }
@@ -47,48 +47,8 @@ posted to `/api/accounts/123/`...
 
 ## Error Response
 
-**Condition** : Account does not exist at URL
+**Condition** : Vendor does not exist
 
 **Code** : `404 NOT FOUND`
 
 **Content** : `{}`
-
-### Or
-
-**Condition** : Authorized User is not Owner of Account at URL.
-
-**Code** : `403 FORBIDDEN`
-
-**Content** : `{}`
-
-## Notes
-
-### Data ignored
-
-Endpoint will ignore irrelevant and read-only data such as parameters that
-don't exist, or `id` and `enterprise` fields which are not editable.
-
-E.g. if Account already exits:
-
-**Data example**
-
-```json
-{
-    "wibble": "flobble",
-    "id": 987,
-    "enterprise": true
-}
-```
-
-**Code** : `200 OK`
-
-**Content example**
-
-```json
-{
-    "id": 123,
-    "name": "New project name",
-    "enterprise": false,
-    "url": "http://testserver/api/accounts/123/"
-}
-```
