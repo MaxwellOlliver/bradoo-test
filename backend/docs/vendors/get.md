@@ -12,7 +12,6 @@ None of the values are required.
 
 ```json
 {
-    // params passed on api url
     "queryParams": {
         "q": "VALUE TO SEARCH BY",
         "field": "FIELD TO SEARCH BY",
