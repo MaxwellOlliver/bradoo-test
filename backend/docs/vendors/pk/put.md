@@ -32,18 +32,9 @@ all fields are required.
 
 **Condition** : Update can be performed either fully or partially.
 
-**Code** : `200 OK`
+**Code** : `204 NO CONTENT`
 
-**Content example** : For the example above, when the 'name' is updated.
-
-```json
-{
-    "id": 123,
-    "name": "New VENDOR name",
-    "enterprise": false,
-    "url": "http://testserver/api/accounts/123/"
-}
-```
+**Content** : `{}`
 
 ## Error Response
 
