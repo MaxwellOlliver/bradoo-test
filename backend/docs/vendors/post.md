@@ -60,8 +60,8 @@ Provide name, CNPJ, city and a products array of Vendor to be created.
     "createdAt": "2020-10-28T16:51:47.543Z",
     "products": [
       {
-        "id": 196,
-        "name": "Carvao",
+        "id": 1,
+        "name": "Pen",
         "code": "000",
         "price": 2.50,
         "vendor_id": 56,
