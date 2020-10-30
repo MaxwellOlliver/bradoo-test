@@ -48,3 +48,32 @@ all fields are required.
 {
     "error": "Vendor does not exists"
 }
+```
+
+### Or
+
+**Condition** : If fields are missed.
+
+**Code** : `400 BAD REQUEST`
+
+**Content example**
+
+```json
+{
+    "Error": "fieldName is a required field."
+}
+```
+
+### Or 
+
+**Condition** : If CNPJ is invalid.
+
+**Code** : `400 BAD REQUEST`
+
+**Content example**
+
+```json
+{
+    "Error": "Invalid CNPJ"
+}
+```

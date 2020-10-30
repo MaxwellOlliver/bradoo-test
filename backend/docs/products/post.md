@@ -77,3 +77,17 @@ Provide name, code, and price to be created.
     "Error": "Vendor does not exists"
 }
 ```
+
+### Or
+
+**Condition** : If fields are missed.
+
+**Code** : `400 BAD REQUEST`
+
+**Content example**
+
+```json
+{
+    "Error": "fieldName is a required field."
+}
+```
