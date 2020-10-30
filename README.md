@@ -52,4 +52,4 @@ With the backend running, let's start the frontend.
 Go to frontend folder on terminal and run ```npm install```to install all dependencies.
 
 
-when finished to install all dependencies, run ```npm start``` to start the project on [localhost:3000](http://localhost:3000).
+when finished to install all dependencies, run ```npm start``` to start the project at [localhost:3000](http://localhost:3000).
