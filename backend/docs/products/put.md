@@ -39,20 +39,6 @@ all fields are required.
 
 ## Error Response
 
-**Condition** : Vendor does not exists
-
-**Code** : `404 NOT FOUND`
-
-**Content**
-
-```json
-{
-    "error": "Vendor does not exists"
-}
-```
-
-### Or
-
 **Condition** : Product does not exists
 
 **Code** : `404 NOT FOUND`
