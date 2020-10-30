@@ -8,7 +8,7 @@ List Vendors according to the parameters sent.
 
 **Data constraints** : 
 
-None of the values are required.
+No one of these values are required.
 
 ```json
 {
