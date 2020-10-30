@@ -17,8 +17,8 @@ ps: All endpoints no require authentication
 
 Each endpoint manipulates or displays information related to Vendors:
 
-* [Create a Vendor](docs/vendors/get.md) : `POST /vendors`
-* [List Vendors](docs/vendors/put.md) : `GET /vendors`
+* [Create a Vendor](docs/vendors/post.md) : `POST /vendors`
+* [List Vendors](docs/vendors/get.md) : `GET /vendors`
 * [Update a Vendor](docs/vendors/put.md) : `PUT /vendors/:pk`
 * [Delete a Vendor](docs/vendors/delete.md) : `DELETE /vendors/:pk`
 
