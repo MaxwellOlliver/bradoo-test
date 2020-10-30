@@ -1,63 +1,48 @@
-# Show Accessible Accounts
+# Show Vendors
 
-Show all Accounts the active User can access and with what permission level.
-Includes their own Account if they have one.
+List Vendors according to the parameters sent.
 
-**URL** : `/api/accounts/`
+**URL** : `/vendors`
 
 **Method** : `GET`
 
-**Auth required** : YES
+**Data constraints** : 
 
-**Permissions required** : None
+None of the values are required.
 
-**Data constraints** : `{}`
+```json
+{
+    // params passed on api url
+    "queryParams": {
+        "q": "VALUE TO SEARCH BY",
+        "field": "FIELD TO SEARCH BY",
+        "page": "PAGE NUMBER - 20 values to page",
+    }
+}
+```
+
+**Data example**:
+
+Searching a vendor with "foo" name.
+
+`/vendors?q=foo&field=name&page=1`
+
 
 ## Success Responses
 
-**Condition** : User can not see any Accounts.
+**Condition** : Everything OK.
 
 **Code** : `200 OK`
 
-**Content** : `{[]}`
-
-### OR
-
-**Condition** : User can see one or more Accounts.
-
-**Code** : `200 OK`
-
-**Content** : In this example, the User can see three Accounts as AccountAdmin
-`AA`, Viewer `VV`, and Owner `OO` - in that order:
-
-```json
-[
-    {
-        "account": {
-            "id": 123,
-            "name": "Lots of Admins Project",
-            "enterprise": false,
-            "url": "http://testserver/api/accounts/123/"
+**Content** : `{
+    [
+        {
+            "id": 19,
+            "name": "foo",
+            "cnpj": "20.599.009/0001-78",
+            "city": "Rio de Janeiro",
+            "createdAt": "2020-10-27T19:08:33.867Z",
+            "updatedAt": "2020-10-27T19:08:33.867Z"
         },
-        "permission": "AA"
-    },
-    {
-        "account": {
-            "id": 234,
-            "name": "Feel free to View this",
-            "enterprise": false,
-            "url": "http://testserver/api/accounts/234/"
-        },
-        "permission": "VV"
-    },
-    {
-        "account": {
-            "id": 345,
-            "name": "Mr Owner Project",
-            "enterprise": false,
-            "url": "http://testserver/api/accounts/345/"
-        },
-        "permission": "OO"
-    }
-]
-```
+    ]
+}`
