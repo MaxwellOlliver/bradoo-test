@@ -8,6 +8,8 @@
 ![Sequelize](https://img.shields.io/badge/Sequelize-v6.3.5-success?style=flat)
 ![React](https://img.shields.io/badge/React-v17.0.1-success?style=flat)
 
+This is a simple project performing a data flow between Vendor and Products (CRUD).
+
 --------
 
 Follow the instructions below to run the project correctly:
